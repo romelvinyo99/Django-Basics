@@ -22,3 +22,17 @@ class Books(models.Model):
 
     def __str__(self):
         return self.title
+
+
+"""
+--> This is how we will be creating the objects --> many to one relation 
+--> when an the root object (author) is deleted all its relational objects are also deleted
+--> Nb//: When passing the the root to the relational object we need to make them as instances
+author = Author.objects.create(name="Ngugi")
+book = Author.objects.create(title="Chozi la Heri", author=author)
+"""
+
+"""
+
+
+"""
