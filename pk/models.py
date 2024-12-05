@@ -53,7 +53,7 @@ class AuthorReverse(models.Model):
 
 class BooksReverse(models.Model):
     title = models.CharField(max_length=50)
-    author = models.ForeignKey(Author, on_delete=models.CASCADE, related_name="books")
+    author = models.ForeignKey(AuthorReverse, on_delete=models.CASCADE, related_name="books")
 
     class Meta:
         ordering = ("title",)
@@ -71,3 +71,10 @@ author_instance = Author.objects.create(name="Ngugi")
 author_instance.books.create(title="Chozi la heri")
 author_instance.books.create(title="A Grain of Wheat")
 """
+
+
+class ImagesModels(models.Model):
+    image = models.ImageField(upload_to="item_images", blank=True)
+
+    class Meta:
+        verbose_name_plural = "ImagesModels"
